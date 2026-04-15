@@ -1,113 +1,120 @@
 # EZ-InMoov ESP32 Calibration Tool
 
-A simple web-based tool to calibrate servos on an EZ-InMoov robot head using **ESP32 + PCA9685**.
+This is a simple tool to calibrate servos of an EZ-InMoov robot head using ESP32 and PCA9685.
 
-Control your robot from a browser → adjust servo limits → save → done.
-
----
-
-## 🚀 Quick Start (5 Minutes)
-
-1. Upload code to ESP32  
-2. Connect ESP32 + PCA9685 + servos  
-3. Open Serial Monitor → copy IP address  
-4. Open browser → enter IP  
-5. Move sliders → click **Save Calibration**
+Instead of the original controller, ESP32 hosts a small web server. You open it in a browser, move sliders, set limits, and save them.
 
 ---
 
-## ✨ Features
+## What it does
 
-- Web-based control (phone, laptop, tablet)
-- Real-time servo movement
-- Adjustable servo limits (250–500 pulse)
-- Save calibration to EEPROM
-- Reset to default option
-- Mobile-friendly interface
+- Control servos from browser
+- Adjust min/max limits
+- Save calibration (stored in EEPROM)
+- Works on phone/laptop
+- Real-time response
 
 ---
 
-## 🔧 Hardware Required
+## Hardware
 
-- ESP32 development board  
-- PCA9685 PWM driver  
-- 3× Servo motors (SG90 or similar)  
-- 5V power supply (≥ 2A recommended)  
+- ESP32  
+- PCA9685  
+- 3 servo motors (SG90 works fine)  
+- External 5V supply (don’t skip this)  
 - Jumper wires  
 
 ---
 
-## 🔌 Wiring
+## Wiring
 
-### ESP32 ↔ PCA9685
+### ESP32 → PCA9685
 
-- VCC → 3.3V  
+- 3.3V → VCC  
 - GND → GND  
-- SCL → GPIO22  
-- SDA → GPIO21  
+- GPIO22 → SCL  
+- GPIO21 → SDA  
 
-### ⚡ External Power (Important)
+### Power
 
-- 5V → PCA9685 V+  
-- GND → PCA9685 GND  
-- ALSO connect this GND to ESP32 GND  
+- 5V supply → V+ (PCA9685)  
+- GND → GND (PCA9685)  
 
-**Note:** Without common ground, servos behave unpredictably.
+**Important:**  
+Connect ESP32 GND with power supply GND (common ground).  
+If you miss this, things will behave weird.
 
 ---
 
-## ⚙️ Setup
+### Servos
 
-### Install ESP32 Board
+- Channel 0 → Eyes  
+- Channel 1 → Mouth  
+- Channel 2 → Neck  
 
-1. Open Arduino IDE  
-2. Go to File → Preferences  
-3. Add this URL:
+Each servo:
+- Red → V+  
+- Brown/Black → GND  
+- Yellow/Orange → Signal  
+
+---
+
+## Setup
+
+Install ESP32 board in Arduino IDE:
+
+Add this in Preferences:
 
 https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
 
-4. Install ESP32 from Boards Manager  
+
+Then install ESP32 from Boards Manager.
+
+Install library:
+- Adafruit PWM Servo Driver
 
 ---
 
-### Install Library
+## WiFi
 
-- Adafruit PWM Servo Driver Library  
-
----
-
-## 📶 Configure WiFi
-
-Edit before uploading:
+Before uploading, update this:
 
 ```cpp
 const char* ssid = "YOUR_WIFI";
 const char* password = "YOUR_PASSWORD";
-⬆️ Upload Code
-Select Board: ESP32 Dev Module
+Upload
+Select: ESP32 Dev Module
 Select correct port
-Click Upload
-🌐 Use the Web Interface
-Open Serial Monitor (115200 baud)
-Note the IP address
-Open browser → enter IP
-Control servos using sliders
-Click Save Calibration
-🎯 Calibration Steps
-Move servo using slider
-Click Extend Left/Right
-Confirm popup
-Click Save Calibration
-⚠️ Common Issues
+Upload
+Usage
+Open Serial Monitor (115200)
+You’ll see an IP address
+Open it in browser
+Move sliders → servos move
+Click save when done
+Calibration
+Move servo
+Extend limit
+Confirm
+Save
 
-Servo jittering
-→ Use proper 5V supply (≥2A)
+That’s it.
 
-Servos not moving
-→ Check SDA/SCL wiring
+Issues
 
-Web page not loading
-→ Ensure same WiFi network
+Servo shaking
+→ Power supply is weak
 
-Random behavior
-→ Check common ground
+No movement
+→ Check SDA/SCL
+
+Page not opening
+→ Same WiFi?
+
+Random movement
+→ Missing common ground
+
+Notes
+Don’t power servos from ESP32
+Use proper 5V supply
+You can extend this for more servos easily
