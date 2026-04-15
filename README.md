@@ -1,6 +1,6 @@
 # EZ-InMoov ESP32 Calibration Tool
 
-> **The Problem:** The original EZ-InMoov controller locks you into a proprietary ecosystem with severe restrictions. It does not support standard communication protocols like ROS2, MQTT, HTTP, or WebSocket without expensive monthly subscriptions, and you cannot write custom firmware or integrate the robot head with external systems.
+> **The Problem:** The original EZ-InMoov controller locks you into a proprietary ecosystem with severe restrictions. It does not support standard communication protocols like ROS2, MQTT, HTTP, or WebSocket without monthly subscriptions, and you cannot write custom firmware or integrate the robot head with external systems.
 >
 > **The Solution:** This ESP32-based replacement completely eliminates these limitations. The ESP32 supports ROS2 (via micro-ROS), MQTT, HTTP/WebSocket, Serial, and any protocol compatible with the platform - all completely free with no subscriptions. You can now integrate your EZ-InMoov head with ROS2 robots, home automation systems, custom dashboards, or any other application. The entire project is open source under the MIT license, giving you full freedom to modify, extend, and control your robot head without restrictions or recurring fees.
 ## Web Interface
