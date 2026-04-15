@@ -6,6 +6,12 @@ Instead of the original controller, ESP32 hosts a small web server. You open it 
 
 ---
 
+## Web Interface
+
+<p align="center">
+  <img src="docs/screenshots/web_interface.png" width="600">
+</p>
+
 ## What it does
 
 - Control servos from browser
