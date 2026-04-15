@@ -56,7 +56,12 @@ If you miss this, things will behave weird.
 
 - Channel 0 → Eyes  
 - Channel 1 → Mouth  
-- Channel 2 → Neck  
+- Channel 2 → Neck
+
+  <a href="docs/screenshots/demo.gif">
+  <img src="docs/screenshots/demo.gif" width="600">
+</a>
+
 
 Each servo:
 - Red → V+  
@@ -127,6 +132,3 @@ You can extend this for more servos easily
 
 ## Demo
 
-<a href="docs/screenshots/demo.gif">
-  <img src="docs/screenshots/demo.gif" width="600">
-</a>
