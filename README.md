@@ -124,3 +124,9 @@ Notes
 Don’t power servos from ESP32
 Use proper 5V supply
 You can extend this for more servos easily
+
+## Demo
+
+<a href="docs/screenshots/demo.gif">
+  <img src="docs/screenshots/demo.gif" width="600">
+</a>
