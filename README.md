@@ -1,72 +1,8 @@
 # EZ-InMoov ESP32 Calibration Tool
 
-## The Problem: Proprietary Lock-in
-
-The original EZ-InMoov controller is a closed, proprietary system that restricts what you can do with your robot head.
-
-### Communication Protocol Restrictions
-
-| Protocol | Original Controller |
-|----------|--------------------|
-| ROS2 | ❌ Not supported (requires paid subscription) |
-| MQTT | ❌ Not supported |
-| HTTP/WebSocket | ❌ Subscription required |
-| Serial/UART | ❌ Restricted |
-| Custom Protocols | ❌ Impossible |
-
-### Software Restrictions
-
-- ❌ Forced to use their proprietary software
-- ❌ Cannot write custom firmware
-- ❌ No API access without subscription
-- ❌ Locked into their ecosystem
-- ❌ No integration with external systems
-
-### Cost Issues
-
-- 💰 Monthly subscription for basic features
-- 💰 Extra fees for communication protocols
-- 💰 Pay to integrate with ROS2 or other systems
-- 💰 Expensive long-term ownership
-
-### What You Cannot Do with Original Controller
-
-- 🔒 Use ROS2 for robotics research
-- 🔒 Integrate with home automation (Home Assistant, Alexa)
-- 🔒 Build custom web dashboards
-- 🔒 Create multi-robot systems
-- 🔒 Add custom sensors or peripherals
-- 🔒 Write your own firmware
-
----
-
-## The Solution: Open ESP32 Platform
-
-This project replaces the proprietary controller with an ESP32 and PCA9685, giving you complete freedom.
-
-### Supported Protocols (All Free, No Subscription)
-
-| Protocol | ESP32 Solution | Use Case |
-|----------|----------------|----------|
-| **ROS2** | ✅ via micro-ROS | Robotics research, navigation, manipulation |
-| **MQTT** | ✅ Built-in support | Home Assistant, IoT, Node-RED |
-| **HTTP/WebSocket** | ✅ Built-in web server | Custom dashboards, remote control |
-| **Serial/UART** | ✅ Full support | Arduino, Raspberry Pi, PC communication |
-| **TCP/IP** | ✅ Native support | Network-based control from anywhere |
-| **Custom Protocols** | ✅ Any protocol | Implement whatever you need |
-
-### What You Can Do Now
-
-| Capability | With This Project |
-|------------|-------------------|
-| ROS2 Integration | ✅ Full support via micro-ROS |
-| Home Assistant | ✅ MQTT ready |
-| Custom Web Dashboard | ✅ HTTP/WebSocket API |
-| Multi-Robot Systems | ✅ Network ready |
-| Add Sensors | ✅ Any I2C/GPIO device |
-| Custom Firmware | ✅ Full source code (MIT) |
-| Monthly Fees | ✅ $0 |
-
+> **The Problem:** The original EZ-InMoov controller locks you into a proprietary ecosystem with severe restrictions. It does not support standard communication protocols like ROS2, MQTT, HTTP, or WebSocket without expensive monthly subscriptions, and you cannot write custom firmware or integrate the robot head with external systems.
+>
+> **The Solution:** This ESP32-based replacement completely eliminates these limitations. The ESP32 supports ROS2 (via micro-ROS), MQTT, HTTP/WebSocket, Serial, and any protocol compatible with the platform - all completely free with no subscriptions. You can now integrate your EZ-InMoov head with ROS2 robots, home automation systems, custom dashboards, or any other application. The entire project is open source under the MIT license, giving you full freedom to modify, extend, and control your robot head without restrictions or recurring fees.
 ## Web Interface
 
 <p align="center">
