@@ -1,9 +1,20 @@
 # EZ-InMoov ESP32 Calibration Tool
 
-This is a simple tool to calibrate servos of an EZ-InMoov robot head using ESP32 and PCA9685.
+The Problem: The original EZ-InMoov robot head controller is a closed, proprietary system that locks users into its own software ecosystem. It does not allow the use of standard communication protocols like ROS2, MQTT, HTTP, WebSocket, or Serial communication without an expensive paid subscription. Even with a subscription, you are restricted to their proprietary software and cannot integrate the robot head with external systems, sensors, or custom applications. This makes it impossible to use the EZ-InMoov head in advanced robotics projects, research, or educational environments that require ROS2 integration or custom communication protocols.
 
-Instead of the original controller, ESP32 hosts a small web server. You open it in a browser, move sliders, set limits, and save them.
+The Solution: This project completely replaces the proprietary controller with an ESP32 and PCA9685, creating an open, flexible platform. The ESP32 supports all standard communication protocols including:
 
+ROS2 (via micro-ROS or ROS2 serial)
+
+HTTP/WebSocket (web-based control from any browser)
+
+MQTT (IoT and home automation integration)
+
+Serial/UART (direct communication with other microcontrollers)
+
+WiFi/TCP/IP (network-based control)
+
+Since the ESP32 is fully programmable with Arduino, MicroPython, or ESP-IDF, you can integrate the robot head with any system, use any communication protocol, and build custom applications without any subscription fees or software restrictions. The entire project is open source under the MIT license, giving you complete freedom to modify, extend, and integrate the EZ-InMoov head into ROS2-based robots, research projects, or educational platforms.
 ---
 
 ## Web Interface
